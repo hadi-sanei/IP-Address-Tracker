@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("../../assets/fonts/Rubik-Medium.ttf") format("truetype");
+}
+body {
+  font-family: "Rubik";
+}
+
+/*# sourceMappingURL=main.css.map */

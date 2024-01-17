@@ -1,0 +1,5 @@
+@use "../utils/variables";
+@font-face {
+    font-family: "Rubik";
+    src: url(variables.$base-path+"assets/fonts/Rubik-Medium.ttf") format("truetype");
+}
