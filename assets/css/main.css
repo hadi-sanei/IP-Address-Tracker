@@ -1,9 +1,59 @@
 @font-face {
   font-family: "Rubik";
+  font-weight: 700;
   src: url("../../assets/fonts/Rubik-Medium.ttf") format("truetype");
 }
+.search {
+  max-width: 25rem;
+  width: 100%;
+  background-color: red;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.search > form {
+  display: flex;
+}
+.search > form > input[type=search] {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  font-family: Rubik;
+}
+.search > form > button {
+  width: 3rem;
+  padding: 1rem;
+  border: none;
+  background-color: black;
+  background-image: url("../../assets/images/icon-arrow.svg");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 body {
+  height: 100vh;
   font-family: "Rubik";
+  background-image: url("../../assets/images/pattern-bg-desktop.png");
+  background-size: cover;
+}
+
+main {
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

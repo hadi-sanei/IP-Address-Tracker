@@ -1,0 +1,27 @@
+@use "../utils/functions";
+.search {
+    max-width: 25rem;
+    width: 100%;
+    background-color: red;
+    border-radius: 1rem;
+    overflow: hidden;
+    & > form {
+        display: flex;
+    }
+    &>form>input[type="search"] {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        font-family: Rubik;
+    }    
+    &>form>button {
+        width: 3rem;
+        padding: 1rem;
+        border: none;
+        background-color: black;
+        background-image: functions.image("icon-arrow.svg");
+        background-size: 15px 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

@@ -1,3 +1,4 @@
+@use "./variables";
 @function image($file){
-    @return url($base-path+"assets/images/"+file);
+    @return url(variables.$base-path+"assets/images/"+$file);
 }
