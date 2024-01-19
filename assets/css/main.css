@@ -30,17 +30,16 @@
   background-position: center;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   height: 100vh;
   font-family: "Rubik";
   background-image: url("../../assets/images/pattern-bg-desktop.png");
   background-size: cover;
-}
-
-main {
-  max-width: 1440px;
-  width: 100%;
-  margin: auto;
 }
 
 main > section {
@@ -49,11 +48,23 @@ main > section {
   align-items: center;
   justify-content: center;
 }
+main > section:nth-child(1) {
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+  height: 30vh;
+}
 
 .title {
   text-align: center;
   color: white;
   font-size: 1.5rem;
+}
+
+#map {
+  width: 100%;
+  height: calc(70vh - 1rem);
 }
 
 /*# sourceMappingURL=main.css.map */
