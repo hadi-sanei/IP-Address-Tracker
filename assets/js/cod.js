@@ -9,15 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 (function () {
+    const search = document.querySelector('#search');
     const ip_address = document.querySelector('#IPAddress');
     const location = document.querySelector('#location');
     const timezone = document.querySelector('#timezone');
     const isp = document.querySelector('#ISP');
     const map = L.map('map', {
-        center: [51.505, -0.09],
-        zoom: 13,
+        zoom: 14,
         zoomControl: false,
         maxZoom: 19,
+        doubleClickZoom: false,
+        attributionControl: false
     });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
     let theMarker;
@@ -31,21 +33,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             iconAnchor: [15, 39],
         });
         theMarker = L.marker((event === null || event === void 0 ? void 0 : event.latlng) || [event.lat, event.lon], { icon: myIcon }).addTo(map);
-        map.setView((event === null || event === void 0 ? void 0 : event.latlng) || [event.lat, event.lon], 13);
+        map.setView((event === null || event === void 0 ? void 0 : event.latlng) || [event.lat, event.lon], 14);
     }
     map.addEventListener("click", (e) => {
         addMarkerToMap(e);
     });
-    function loadIpAddress() {
+    function loadIpAddress(search) {
         return __awaiter(this, void 0, void 0, function* () {
-            let data = yield fetch('http://ip-api.com/json');
-            data = yield data.json();
-            return data;
+            let response = yield fetch(`http://ip-api.com/json/${search || ''}`);
+            if (response.status === 200) {
+                const data = yield response.json();
+                if (data.status !== 'success') {
+                    throw new Error(data.message);
+                }
+                return data;
+            }
+            throw new Error('not found...');
         });
     }
     loadIpAddress().then(data => {
         addMarkerToMap(data);
         updateElements(data);
+    }).catch(e => {
+        alert(e.message);
     });
     function updateElements(data) {
         ip_address.innerHTML = data.query;
@@ -53,4 +63,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         timezone.innerHTML = data.timezone;
         isp.innerHTML = data.isp;
     }
+    function searchIpAddressOrDomain(search) {
+        loadIpAddress(search).then(data => {
+            addMarkerToMap(data);
+            updateElements(data);
+        }).catch(e => {
+            alert(e.message);
+        });
+    }
+    search.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const search_input = document.querySelector('#search_input');
+        searchIpAddressOrDomain(search_input.value);
+    });
 })();
