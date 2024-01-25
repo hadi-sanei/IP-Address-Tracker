@@ -96,6 +96,11 @@ body {
   background-image: url("../../assets/images/pattern-bg-desktop.png");
   background-size: cover;
 }
+@media screen and (max-width: 440px) {
+  body {
+    background-image: url("../../assets/images/pattern-bg-mobile.png");
+  }
+}
 
 main > section:nth-child(1) {
   max-width: 1440px;
