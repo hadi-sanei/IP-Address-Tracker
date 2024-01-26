@@ -28,7 +28,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             map.removeLayer(theMarker);
         }
         const myIcon = L.icon({
-            iconUrl: '../../assets/images/icon-location.svg',
+            iconUrl: './assets/images/icon-location.svg',
             iconSize: [30, 40],
             iconAnchor: [15, 39],
         });

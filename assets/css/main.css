@@ -134,6 +134,10 @@ main > section:nth-child(1) {
   }
 }
 
+#IPAddress {
+  word-wrap: break-word;
+}
+
 #map {
   width: 100%;
   height: calc(100vh - 16rem);

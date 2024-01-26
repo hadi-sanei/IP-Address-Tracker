@@ -18,7 +18,7 @@
             map.removeLayer(theMarker);
         }
         const myIcon = L.icon({
-            iconUrl: '../../assets/images/icon-location.svg',
+            iconUrl: './assets/images/icon-location.svg',
             iconSize: [30, 40],
             iconAnchor: [15, 39],
         });
