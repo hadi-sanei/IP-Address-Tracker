@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot-advice-app](./assets/images/Screenshot-ip-adress-tracker.png)
+![Screenshot-advice-app](./assets/images/Screenshot-ip-adress-tracker.JPG)
 
 ### Links
 
