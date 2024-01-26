@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/css/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
@@ -18,7 +19,7 @@
       </section>
       <section class="search">
         <form id="search">
-          <input type="search" placeholder="Search for any IP address or domain" name="search" id="search_input">
+          <input type="search" placeholder="Search for any IP address" name="search" id="search_input">
           <button></button>
         </form>
       </section>
@@ -37,8 +38,8 @@
           <div id="timezone"></div>
         </section>
         <section>
-          <div>ISP</div>
-          <div id="ISP"></div>
+          <div>CONTINENT</div>
+          <div id="continent"></div>
         </section>
       </section>
     </section>
